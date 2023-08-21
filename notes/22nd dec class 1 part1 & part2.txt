@@ -1,0 +1,306 @@
+1. CPP SYNTAX -> 
+
+#include <iostream> // header file - for ip and op
+using namespace std; // means std wala cin and cout use krlo, agr ye nahi likhte to std::cout
+
+int main() // main vo function h, jo sabse phle run hota hai execution stack me 
+{
+    cout << "Hello"; // to print 
+    return 0; // taki c++ OS ko bta paye ki kaam hogya hai ab terminate krdo
+}
+========================================
+
+TO RUN C++ CODE ->
+ g++ fileName.cpp -o out && out (for windows)
+ g++ fileName.cpp -o out && ./out (for mac / linux) 
+
+ && isse pehle wali file code ko compile kregi (.exe) file create kregi 
+ and && iske baad wali command code run kregi.
+
+===========================================
+
+2. JAVA SYNTAX
+- It is purely object oriented language
+- so jo bhi kaam hota hai vo class ke andr hota hai, so phle class bnani padhegi 
+make sure class and file name should be same 
+
+SYNTAX -> 
+
+import java.util.Scanner;
+public class l001Basics {
+    public static Scanner scn = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        System.out.print("Hello");
+        System.out.println("coder"); // ln -> is used for next line, jo bhi next op hoga vo next line se chalu hoga
+
+        System.out.println("Arsh");
+    }
+}
+
+===================================================
+
+TO COMPILE & RUN ->  javac l001Basics.java && java l001Basics.java
+
+=================================================
+
+3. SUPPOSE sometime we want ki 1 input.txt file ke se input uthae and output.txt me throw krde. 
+
+NOTE -> 
+1. "< " iske right side me jo likhege uss file se input read krega 
+2.  >  iske baad jo likhege uss file output throw krega  
+
+======================================================
+
+
+4. FUNCTIONS....
+
+A piece of code that can reuse 
+
+ // FUNCTIONS......
+    int a, b; // Taking input from users
+    cin >> a >> b;
+
+    cout << a + b << endl;
+    cout << a - b << endl;
+    cout << a * b << endl;
+    cout << a / b << endl;
+    cout << a + b << endl; // Again + wale ka logic likhre hai, so better to make a function
+
+
+NOTE ->
+- 1 int = 4 byte ie 32 bits => 1 Byte = 8 bits
+- try to make MAIN section clean, jitna ho ske function me break krlo 
+=============================================================================
+
+5. FUNCTIONS AND RETURN TYPE.
+
+in cpp -> jiss function ko call krre hai uska upr hona jruri hai, and 
+in Java -> jidr mrji call rkhlo function ko
+
+int mult(int a, int b){ // int is return type, means function 1 integer value return krega 
+    return a + b;       // so jidr function ko call kri hai, udr hum catch bhi "1 int ke 
+                        // variable me hi krege ya fir udr hi Syso krdege" 
+}
+
+
+
+void add(int a, int b)  // void means empty kuch return nai krega, niche se direct call krege 
+{
+    int c = a + b;
+    cout << c << endl;
+}
+
+==================================================================================================
+
+COMPLETE CODE IS BELOW: 
+
+1. JAVA -> 
+
+import java.util.Scanner;
+
+public class l001Basics {
+
+  public static Scanner scn = new Scanner(System.in);
+
+  public static int mult(int a, int b) {
+    return a * b;
+  }
+
+  public static void add(int a, int b) {
+    int c = a + b;
+    System.out.println(c);
+  }
+
+  public static int subtract(int a, int b) {
+    return a - b;
+  }
+
+  public static int divide(int a, int b) {
+    return a / b;
+  }
+
+  public static void main(String[] args) {
+    System.out.print("Hello ");
+    System.out.println("coder"); // ln -> is used for next line, jo bhi next op hoga vo next line se chalu hoga
+
+    System.out.println("Arsh");
+
+    // Functions
+    System.out.println(mult(3, 2));
+    System.out.println(subtract(3, 2));
+    System.out.println(divide(3, 2));
+    add(3, 2);
+  }
+}
+
+-------------
+
+2. CPP -> 
+
+#include <iostream>
+using namespace std;
+
+int mult(int a, int b)
+{
+    return a * b;
+}
+
+void add(int a, int b)
+{
+    int c = a + b;
+    cout << c << endl;
+}
+
+int subtract(int a, int b)
+{
+    return a - b;
+}
+
+int divide(int a, int b)
+{
+    return a / b;
+}
+
+int main()
+{
+    cout << "Hello ";
+    cout << "Arsh " << endl;
+    // Agr 1 next line print krni hai to endl lgayege otherwise 1 hi line me aata jaega
+    cout << "coder " << endl;
+
+    // FUNCTIONS......
+    int a, b; // Taking input from users
+    cin >> a >> b;
+    /*
+        cout << a + b << endl;
+        cout << a - b << endl;
+        cout << a * b << endl;
+        cout << a / b << endl;
+        cout << a + b << endl; // Again + wale ka logic likhre hai, so better to make a function
+    */
+
+    int ans = mult(a, b); // return krra tha isliye 1 variable me catch krra, and usko print kra
+    cout << ans << endl;
+
+    add(a, b) ; // coz kuch return ni krra, direct call
+    cout << divide(a, b) << endl; // 2nd way, agr kisi variable me catch nai krna toh
+    cout << subtract(a, b) << endl;
+
+    return 0;
+}
+
+-------------------
+
+2) If else -> if else => jo bhi true hoga to IF run hoga else nahi, 
+                agr if false hai toh else chlega 
+
+
+3. If else ladder -> 
+if(cond){
+
+}else if( cond) {
+
+}else if () {
+
+}else {
+
+}
+
+Koi 1 bhi true hogi toh vo block hi chlega aur koi nai chlega. prog will finish
+
+========================================
+
+ CODE -> 
+
+ 1. l002Basics -> JAVA
+
+ import java.util.Scanner;
+
+public class l002Basics {
+
+  public static Scanner scn = new Scanner(System.in);
+
+  // Q1)
+  public static void printZ() {
+    System.out.println("*****");
+    System.out.println("   *");
+    System.out.println("  *");
+    System.out.println(" *");
+    System.out.println("*****");
+  }
+
+  // Q2)
+  public static void gradingSystem(int marks) {
+    if (marks > 90) {
+      System.out.println("excellent");
+    } else if (marks > 80 && marks <= 90) {
+      System.out.println("good");
+    } else if (marks > 70 && marks <= 80) {
+      System.out.println("fair");
+    } else if (marks > 60 && marks <= 70) {
+      System.out.println("meets expectations");
+    } else {
+      System.out.println("below par");
+    }
+  }
+
+  public static void main(String[] args) {
+    // printZ();
+    int n = scn.nextInt();
+    gradingSystem(n);
+  }
+}
+
+================
+
+2. CPP -> l002Basics
+
+#include <iostream>
+using namespace std;
+
+// Q1)
+void printZ()
+{
+    cout << "*****" << endl;
+    cout << "   *" << endl;
+    cout << "  *" << endl;
+    cout << " *" << endl;
+    cout << "*****" << endl;
+}
+
+// Q2)
+void gradingSystem(int marks)
+{
+    if (marks > 90)
+    {
+        cout << "excellent" << endl;
+    }
+    else if (marks > 80 && marks <= 90)
+    {
+        cout << "good" << endl;
+    }
+    else if (marks > 70 && marks <= 80)
+    {
+        cout << "fair" << endl;
+    }
+    else if (marks > 60 && marks <= 70)
+    {
+        cout << "meets expectations" << endl;
+    }
+    else
+    {
+        cout << "below par" << endl;
+    }
+}
+
+int main()
+{
+    int marks;
+    cin >> marks;
+    // printZ();
+
+    gradingSystem(marks);
+}
+
+================================ finish =======================

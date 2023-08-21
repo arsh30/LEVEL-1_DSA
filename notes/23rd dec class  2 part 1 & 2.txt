@@ -1,0 +1,60 @@
+Loops -> koi same kaam multple times repeat krna hai toh we use loop , eg: arsh print krdo 100 times to we use loop 
+kyuki baar baar same kaam krna hai, 
+
+TYPES OF LOOP ->
+
+1. for loop -> for (int i = 1; i <= 100; i++) {
+    cout << "Arsh"
+}
+
+2. While loop -> 
+int i = 1;
+while(i <= 10) { // condition
+    cout << "Arsh";
+    i++; // agr ye nahi krte toh infinite loop chl jayega; i++ and i = i + 1 both are same
+}
+
+for loop -> for loop is used when we know the starting value and ending condition, means exact no of iteration pta ho 
+            jb ye use krte hai 
+
+
+While loop -> used when we don't know the exact number of iteration
+
+
+
+void printNTimes(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        cout << "Hello" << endl;
+    }
+    cout << endl;
+}
+
+// Q2)
+void printTableofN(int n)
+{
+    for (int i = 1; i <= 10; i++)
+    {
+        // cout << n << " X " << i << " = " << n * i << endl;
+
+        cout << to_string(n) + " X " << to_string(i) << " = " << to_string(n * i) << endl;
+        // try to use this 2nd way because hame generally string return krne ke liye bolte hai
+        // jo bhi integer quantity hai usko string me convert krlege and 
+    }
+    cout << endl;
+}
+
+// Q3)
+void printTableNTimes(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        printTableofN(i);
+    }
+    cout << endl;
+}
+
+
+
+
