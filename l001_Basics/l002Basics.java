@@ -112,8 +112,65 @@ public class l002Basics {
 
   // Q8
   public static int countDigits(int n) {
-    
+    /*
+     Note - '/' this means Divide , means Qotient, and this is used [ jab number ko chotta krna ho ]
+     '%' this is modulus, last digit find krke deta hai
+     */
+    int count = 0;
+
+    while (n != 0) {
+      n = n / 10; // basically jo qotient aayega usko again divide krege, jab tak vo 0 ni hojaye
+      // / ye krne se last digit kam hogyi and number ko save krliya
+      count++;
+      /*
+             Doubt -> isme % krke kyu nai kiya;  because last digit dega , agar test case 10000 hoga to 
+             har bar 0 dega and condition kese lgaege
+            */
+    }
+    return count;
   }
+
+  // Q9)
+  public static void printDigitsOfNumber(int n) {
+    /*
+     * Note -> jitne 10 ki power se number ko divide (/) krege utne number kam honge "piche se"
+     */
+    int nod = countDigits(n);
+    int divisor = (int) Math.pow(10, nod - 1); // Java Khud se type casting nahi krti
+
+    while (divisor != 0) {
+      int qotient = n / divisor;
+      int rem = n % divisor; // isme first digit ko chorh kar sari digit rehti hai
+      System.out.print(qotient + " ");
+
+      n = rem;
+      divisor /= 10; // 10^3 then 10^2 then 10^1 ....
+    }
+  }
+
+  // Q10)
+  public static void printNumberInReverseOrder(int n) { // 3125
+    // Now we want last digit vo milti hai "% (Modulus) se"
+    while (n > 0) { // number jab tak 0 nahi hota ya fir number > 0 h
+      int lastDigit = n % 10;
+      System.out.print(lastDigit + " ");
+      // Now we get the last digit and now ab number ko chota krege
+      n /= 10;
+    }
+  }
+
+  // Q11) 
+  public static int reverseNumber(int n) {
+    int ans = 0;
+    while (n > 0) {
+      int lastDigit = n % 10;
+      n /= 10;
+      ans = ans * 10 + lastDigit;
+
+    }
+    return ans;
+  }
+
 
   public static void main(String[] args) {
     // printZ();
@@ -122,6 +179,11 @@ public class l002Basics {
     // oddEven(n);
     // primeNumber();
     // printPrimeTill(2, 10);
-    fibonacciSeries(n);
+    // fibonacciSeries(n);
+    // System.out.println(countDigits(n));
+    // printDigitsOfNumber(n);
+    // printNumberInReverseOrder(12345);
+
+    System.out.println(reverseNumber(n));
   }
 }
